@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('earr.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Container with border */
+        .bordered-container {
+    position: relative;
+    width: 70%; /* Increased size from 60% to 70% */
+    height: 70%; /* Increased size from 60% to 70% */
+    border: 5px solid rgb(109, 13, 13); /* Border for the container */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* So that the image appears in front of it */
+}
+
+        /* Button container to position buttons inside the bordered box */
+        .button-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        button {
+            position: absolute;
+            padding: 10px 20px;
+            font-size: 20px;
+            color: rgb(109, 13, 13);
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        /* Specific positions for each button inside the bordered area */
+        #testButton {
+            top: 20px;
+            left: 20px;
+        }
+
+        .second-button {
+            top: 100px;
+            left: 20px;
+        }
+
+        .third-button {
+            top: 180px;
+            left: 20px;
+        }
+
+        .fourth-button {
+            top: 260px;
+            left: 20px;
+        }
+
+        .fifth-button {
+            top: 340px;
+            left: 20px;
+        }
+
+        /* Popping effect for all buttons */
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pop-effect {
+            animation: pop 0.3s ease;
+        }
+
+        /* Ear image in front of the bordered container */
+        .overlay-image {
+            position: absolute;
+            top: 30%; /* Moved the image down */
+            left: 50%; /* Moved the image to the left */
+            size: 320px 100px
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            z-index: 2;
+            width: 325px; /* Adjusted width */
+            height: 250px;  /* Ensure the image is above the buttons and container */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Container with border -->
+    <div class="bordered-container">
+        <div class="button-container">
+            <!-- Buttons placed inside the container -->
+            <button id="testButton">Take a Test</button>
+            <button class="second-button" id="learnButton">Learn More</button>
+            <button class="third-button" id="resourcesButton">Resources</button>
+            <button class="fourth-button" id="quizButton">What is a hearing loss</button>
+            <button class="fifth-button" id="contactButton">Contact Us</button>
+        </div>
+    </div>
+
+    <!-- Overlay image in front of the container -->
+    <img src="Student-doing-a-hearing-test-300x241.jpg" alt="Ear Image" class="overlay-image" width="200" height="200">
+
+    <script>
+        // Pop-up effect on "Take a Test" button click
+        const button = document.getElementById('testButton');
+        button.addEventListener('click', function () {
+            button.classList.add('pop-effect'); // Apply the popping effect
+            setTimeout(function() {
+                button.classList.remove('pop-effect'); // Remove it after the animation
+                window.location.href = 'http://127.0.0.1:5500/index.html';
+            }, 300);
+        });
+
+        // Second button click event with popping effect
+        const learnButton = document.getElementById('learnButton');
+        learnButton.addEventListener('click', function () {
+            learnButton.classList.add('pop-effect');
+            setTimeout(function() {
+                learnButton.classList.remove('pop-effect');
+                window.location.href = 'https://www.canva.com/design/DAGP5tCrcJ8/2aWWjuqQywfbVdadCerM_Q/view?utm_content=DAGP5tCrcJ8&utm_campaign=designshare&utm_medium=link&utm_source=editor';
+            }, 300);
+        });
+
+        // Third button click event with popping effect
+        const resourcesButton = document.getElementById('resourcesButton');
+        resourcesButton.addEventListener('click', function () {
+            resourcesButton.classList.add('pop-effect');
+            setTimeout(function() {
+                resourcesButton.classList.remove('pop-effect');
+                window.location.href = 'https://en.wikipedia.org/wiki/History_of_hearing_aids';
+            }, 300);
+        });
+
+        // Fourth button click event with popping effect
+        const quizButton = document.getElementById('quizButton');
+        quizButton.addEventListener('click', function () {
+            quizButton.classList.add('pop-effect');
+            setTimeout(function() {
+                quizButton.classList.remove('pop-effect');
+                window.location.href = 'https://en.wikipedia.org/wiki/Hearing_loss';
+            }, 300);
+        });
+
+        // Fifth button click event with popping effect
+        const contactButton = document.getElementById('contactButton');
+        contactButton.addEventListener('click', function () {
+            contactButton.classList.add('pop-effect');
+            setTimeout(function() {
+                contactButton.classList.remove('pop-effect');
+                window.location.href = 'https://www.canva.com/design/DAGP5g6ac-M/SXXPMNrl0nNruGIegxbDsg/view?utm_content=DAGP5g6ac-M&utm_campaign=designshare&utm_medium=link&utm_source=editor';
+            }, 300);
+        });
+    </script>
+
+</body>
+</html>
